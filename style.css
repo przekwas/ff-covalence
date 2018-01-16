@@ -1,19 +1,18 @@
-div {
-    width: 100vw;
-}
-
 #top-background {
-    background-color: green;
+    background-image: url("images/forest_bg.gif");
+    background-repeat: round;
     height: 5vw;
 }
 
 #battleground {
     background-color: black;
-    height: 25vw;
+    height: 23vw;
 }
 
 #interface {
     background-color: blue;
+    border: 10px solid lightgray;
+    border-radius: 2em;
     height: 20vw;
 }
 
@@ -24,8 +23,8 @@ div {
 }
 
 #warrior img {
-    height: 150%;
-    width: 150%;
+    height: 190%;
+    width: 190%;
 }
 
 #boss {
@@ -35,6 +34,6 @@ div {
 }
 
 #boss img {
-    height: 150%;
-    width: 150%;
+    height: 175%;
+    width: 175%;
 }
