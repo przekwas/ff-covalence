@@ -1,9 +1,27 @@
 //making calling these divs easier
 let infoScreenDiv = $("#info");
 let actionScreenDiv = $("#actions");
+
+//objects for players and npcs
+let playerOne = {
+    name: "Luke",
+    totalHealth: "3000",
+    currentHealth: "1987",
+    attackPower: "200"
+}
+let boss = {
+    name: "Covalence",
+    totalHealth: "9999",
+    currentHealth: "9999",
+    attackPower: "100"
+}
+
 //test playerOne info on the div
-let playerOne = $("<span>Luke 3000 / 3000</span>");
-playerOne.appendTo(infoScreenDiv);
+let positionOne = $("<span>" + playerOne.name + ": " + playerOne.currentHealth + " / " + playerOne.totalHealth + "</span><br>");
+positionOne.appendTo(infoScreenDiv);
+
+let positionTwo = $("<span>" + boss.name + ": " + boss.currentHealth + " / " + boss.totalHealth + "</span><br>");
+positionTwo.appendTo(infoScreenDiv);
 
 let arrowPointer = $("<img src='images/si-glyph-arrow-thick-left.svg' id='arrow'>");
 
@@ -36,8 +54,5 @@ $(document).keydown(function (event) {
             actionIndex = 3;
             arrowPointer.appendTo("#" + actionIndex);
         }
-
     }
-
-
 });
