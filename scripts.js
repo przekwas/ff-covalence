@@ -20,7 +20,7 @@ let boss = {
 let positionOne = $("<span>" + playerOne.name + ": " + playerOne.currentHealth + " / " + playerOne.totalHealth + "</span><br>");
 positionOne.appendTo(infoScreenDiv);
 
-let positionTwo = $("<span>" + boss.name + ": " + boss.currentHealth + " / " + boss.totalHealth + "</span><br>");
+let positionTwo = $("<span id='boss-stats'>" + boss.name + ": " + boss.currentHealth + " / " + boss.totalHealth + "</span><br>");
 positionTwo.appendTo(infoScreenDiv);
 
 let arrowPointer = $("<img src='images/si-glyph-arrow-thick-left.svg' id='arrow'>");
@@ -55,4 +55,15 @@ $(document).keydown(function (event) {
             arrowPointer.appendTo("#" + actionIndex);
         }
     }
+});
+
+$(document).keypress(function () {
+
+    if (event.which == 13) {
+        if (actionIndex === 0) {
+            boss.currentHealth = boss.currentHealth - playerOne.attackPower;
+            $("#boss-stats").text(boss.name + ": " + boss.currentHealth + " / " + boss.totalHealth);
+        }
+    }
+
 });
