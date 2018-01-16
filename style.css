@@ -1,0 +1,18 @@
+div {
+    width: 100vw;
+}
+
+#top-background {
+    background-color: green;
+    height: 5vw;
+}
+
+#battleground {
+    background-color: black;
+    height: 25vw;
+}
+
+#interface {
+    background-color: blue;
+    height: 20vw;
+}
