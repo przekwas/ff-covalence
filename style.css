@@ -54,3 +54,10 @@
     text-align: center;
     text-shadow: 2px 2px 2px black;
 }
+
+#arrow {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    fill: lightgray;
+}
