@@ -12,7 +12,7 @@ let playerOne = {
 let boss = {
     name: "Covalence",
     totalHealth: "9999",
-    currentHealth: "9999",
+    currentHealth: "999",
     attackPower: "100"
 }
 
@@ -61,8 +61,14 @@ $(document).keypress(function () {
 
     if (event.which == 13) {
         if (actionIndex === 0) {
-            boss.currentHealth = boss.currentHealth - playerOne.attackPower;
-            $("#boss-stats").text(boss.name + ": " + boss.currentHealth + " / " + boss.totalHealth);
+            if (boss.currentHealth - playerOne.attackPower > 0) {
+                boss.currentHealth = boss.currentHealth - playerOne.attackPower;
+                $("#boss-stats").text(boss.name + ": " + boss.currentHealth + " / " + boss.totalHealth);
+            } else if (boss.currentHealth - playerOne.attackPower <= 0) {
+                $("#boss-stats").text(boss.name + ": SLAUGHTERED!");
+                $("#boss").fadeOut("slow");
+                $("#warrior img").attr("src", "images/Warrior-Victory.gif");
+            }
         }
     }
 
