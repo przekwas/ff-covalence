@@ -22,13 +22,22 @@ let actionIndex = 0;
 $(document).keydown(function (event) {
 
     //watches for up/down arrow keys to move the arrow
-        if (event.which === 40) {
-            actionIndex++;
-            arrowPointer.appendTo("#" + actionIndex);
-        } else if (event.which === 38) {
-            actionIndex--;
+    if (event.which === 40) {
+        actionIndex++;
+        arrowPointer.appendTo("#" + actionIndex);
+        if (actionIndex > 3) {
+            actionIndex = 0;
             arrowPointer.appendTo("#" + actionIndex);
         }
-    
+    } else if (event.which === 38) {
+        actionIndex--;
+        arrowPointer.appendTo("#" + actionIndex);
+        if (actionIndex < 0) {
+            actionIndex = 3;
+            arrowPointer.appendTo("#" + actionIndex);
+        }
+
+    }
+
 
 });
