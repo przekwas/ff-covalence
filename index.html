@@ -12,9 +12,11 @@
 </head>
 
 <body>
-
+    <!--bootstrap grid container--> 
     <div class="container-fluid" id="target">
+        <!-- top div is for the FF background -->
         <div class="row col-lg-12" id="top-background"></div>
+        <!-- middle div is for the battleground and sprites -->
         <div class="row col-lg-12" id="battleground">
             <span id="boss">
                 <img src="images/test_boss.gif">
@@ -23,9 +25,12 @@
                 <img src="images/Warrior.gif">
             </span>
         </div>
-        <div class="row col-lg-12 interface"><!--Level1-->
-            <div class="row"><!--Level2-->
+        <!-- bottom div is for the nested information panels -->
+        <div class="row col-lg-12 interface">
+            <div class="row">
+                <!-- action screen! -->
                 <div class="class col-lg-4 interface" id="actions"></div>
+                <!-- player and health screen! -->
                 <div class="class col-lg-8 interface" id="info"></div>
             </div>
         </div>
