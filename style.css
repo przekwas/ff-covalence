@@ -16,3 +16,25 @@ div {
     background-color: blue;
     height: 20vw;
 }
+
+#warrior {
+    float: right;
+    margin: 4em;
+    padding: 4em;
+}
+
+#warrior img {
+    height: 150%;
+    width: 150%;
+}
+
+#boss {
+    float: left;
+    margin: 3em;
+    padding: 3em;
+}
+
+#boss img {
+    height: 150%;
+    width: 150%;
+}
