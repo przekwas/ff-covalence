@@ -9,11 +9,14 @@
     height: 23vw;
 }
 
-#interface {
+.interface {
     background-color: blue;
     border: 10px solid lightgray;
-    border-radius: 2em;
+    border-radius: 0.5em;
     height: 20vw;
+    font-size: 2em;
+    color: lightgray;
+    font-family: monospace;
 }
 
 #warrior {
@@ -36,4 +39,18 @@
 #boss img {
     height: 175%;
     width: 175%;
+}
+
+#info span { 
+    text-align: center;
+    margin: 0.5em;
+    padding: 0.5em;
+    text-shadow: 2px 2px 2px black;
+}
+
+#actions span {
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+    text-shadow: 2px 2px 2px black;
 }
