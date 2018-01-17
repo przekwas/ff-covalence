@@ -59,11 +59,18 @@ $(document).keydown(function (event) {
 
 $(document).keypress(function () {
 
+    //watches for enter being pressed
     if (event.which == 13) {
+        //catch for "Fight" being selected
         if (actionIndex === 0) {
+            //prints new health for boss after being attacked
             if (boss.currentHealth - playerOne.attackPower > 0) {
                 boss.currentHealth = boss.currentHealth - playerOne.attackPower;
                 $("#boss-stats").text(boss.name + ": " + boss.currentHealth + " / " + boss.totalHealth);
+                $("#warrior img").animate({ "right": "50px" }, function () {
+                    $(this).animate({ "right": "0px" })
+                });
+            //death fade, victory dance!
             } else if (boss.currentHealth - playerOne.attackPower <= 0) {
                 $("#boss-stats").text(boss.name + ": SLAUGHTERED!");
                 $("#boss").fadeOut("slow");

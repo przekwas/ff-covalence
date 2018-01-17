@@ -26,6 +26,7 @@
 }
 
 #warrior img {
+    position: relative;
     height: 190%;
     width: 190%;
 }
