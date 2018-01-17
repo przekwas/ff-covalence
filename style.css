@@ -10,13 +10,22 @@
 }
 
 .interface {
-    background-color: blue;
-    border: 10px solid lightgray;
-    border-radius: 0.5em;
-    height: 20vw;
+    background: black;
     font-size: 2em;
     color: lightgray;
     font-family: monospace;
+}
+
+.interface #actions {
+    background-color: blue;
+    border: 10px solid lightgray;
+    border-radius: 0.5em;
+}
+
+.interface #info {
+    background-color: blue;
+    border: 10px solid lightgray;
+    border-radius: 0.5em;
 }
 
 #warrior {
