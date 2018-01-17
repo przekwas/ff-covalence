@@ -2,19 +2,20 @@
 let infoScreenDiv = $("#info");
 let actionScreenDiv = $("#actions");
 
-//objects for players and npcs
-let playerOne = {
-    name: "Luke",
-    totalHealth: "3000",
-    currentHealth: "1987",
-    attackPower: "200"
+//class for npc's
+class Npc {
+    constructor(name, totalHealth, currentHealth, attackPower) {
+        this.name = name;
+        this.totalHealth = totalHealth;
+        this.currentHealth = currentHealth;
+        this.attackPower = attackPower;
+    }
 }
-let boss = {
-    name: "Covalence",
-    totalHealth: "9999",
-    currentHealth: "999",
-    attackPower: "100"
-}
+
+//test objects for players and npcs
+let playerOne = new Npc("Luke", 3000, 1987, 200);
+let boss = new Npc("Covalence", 9999, 999, 100);
+
 
 //test playerOne info on the div
 let positionOne = $("<span>" + playerOne.name + ": " + playerOne.currentHealth + " / " + playerOne.totalHealth + "</span><br>");
