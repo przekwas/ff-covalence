@@ -30,7 +30,7 @@ let arrowPointer = $("<img src='images/si-glyph-arrow-thick-left.svg' id='arrow'
 //loops all the action items on the div
 let actionListItems = ["Fight", "Magic", "Code", "Items"];
 for (i = 0; i < actionListItems.length; i++) {
-    let actionItem = $("<span id=" + i + ">" + actionListItems[i] + "</span><br>")
+    let actionItem = $("<span id=" + i + ">" + actionListItems[i] + "</span>")
     actionItem.appendTo(actionScreenDiv);
 }
 

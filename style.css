@@ -20,7 +20,9 @@
     background-color: blue;
     border: 10px solid lightgray;
     border-radius: 0.5em;
+    text-align: left;
 }
+
 
 .interface #info {
     background-color: blue;
@@ -59,10 +61,12 @@
 }
 
 #actions span {
-    margin: 1em;
-    padding: 1em;
+    /* margin: 1em;
+    padding: 1em; */
     text-align: center;
     text-shadow: 2px 2px 2px black;
+    text-align: left;
+    display: block;
 }
 
 #arrow {
