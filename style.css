@@ -44,8 +44,8 @@
 
 #boss {
     float: left;
-    margin: 3em;
-    padding: 3em;
+    margin: 2em;
+    padding: 2em;
 }
 
 #boss img {
@@ -61,8 +61,6 @@
 }
 
 #actions span {
-    /* margin: 1em;
-    padding: 1em; */
     text-align: center;
     text-shadow: 2px 2px 2px black;
     text-align: left;
@@ -73,5 +71,4 @@
     display: inline-block;
     height: 1em;
     width: 1em;
-    fill: lightgray;
 }

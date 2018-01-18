@@ -4,11 +4,22 @@ let actionScreenDiv = $("#actions");
 
 //class for npc's
 class Npc {
-    constructor(name, totalHealth, currentHealth, attackPower) {
+    constructor(name, totalHealth, currentHealth, attackPower, img) {
         this.name = name;
         this.totalHealth = totalHealth;
         this.currentHealth = currentHealth;
         this.attackPower = attackPower;
+    }
+    //animation for a regular attack
+    attack() {
+        $("#warrior img").animate({ "right": "50px" }, function () { $(this).animate({ "right": "0px" }) });
+    }
+    //change sprite to victory dance gif
+    victory() {
+        $("#warrior img").attr("src", "images/Warrior-Victory.gif");
+    }
+    magicCast() {
+        //$('#warrior img').attr("src", "images/Warrior-Magic.jpg");NOT YET WORKING 
     }
 }
 
@@ -68,15 +79,23 @@ $(document).keypress(function () {
             if (boss.currentHealth - playerOne.attackPower > 0) {
                 boss.currentHealth = boss.currentHealth - playerOne.attackPower;
                 $("#boss-stats").text(boss.name + ": " + boss.currentHealth + " / " + boss.totalHealth);
-                $("#warrior img").animate({ "right": "50px" }, function () {
-                    $(this).animate({ "right": "0px" })
-                });
-            //death fade, victory dance!
+                playerOne.attack();
+                //death fade, victory dance!
             } else if (boss.currentHealth - playerOne.attackPower <= 0) {
                 $("#boss-stats").text(boss.name + ": SLAUGHTERED!");
                 $("#boss").fadeOut("slow");
-                $("#warrior img").attr("src", "images/Warrior-Victory.gif");
+                playerOne.victory();
             }
+            //catch for "Magic" being selected
+        } else if (actionIndex === 1) {
+            
+            playerOne.magicCast();
+            //catch for "Code" being selected
+        } else if (actionIndex === 2) {
+
+            //catch for "Item" being selected
+        } else if (actionIndex === 3) {
+
         }
     }
 
