@@ -13,7 +13,7 @@
 
 <body>
     <!--bootstrap grid container-->
-    <div class="container-fluid" id="target">
+    <div class="container" id="target">
         <!-- top div is for the FF background -->
         <div class="row col-lg-12" id="top-background"></div>
         <!-- middle div is for the battleground and sprites -->
@@ -27,21 +27,23 @@
         </div>
         <!-- bottom div is for the nested information panels -->
         <div class="row col-lg-12 interface">
-            <div class="row">
-                <!-- action screen! -->
-                <div class="class col-lg-1"></div>
-                <div class="class col-lg-3 interface" id="actions"></div>
-                <!-- player and health screen! -->
-                <div class="class col-lg-7 interface" id="info"></div>
+            <div class="col-lg-12">
+                <div class="row">
+                    <!-- action screen! -->
+                    <div class="col-sm-1"></div>
+                    <div class="col-12 col-sm-2" id="actions"></div>
+                    <!-- player and health screen! -->
+                    <div class="col-12 col-sm-7" id="info"></div>
+                    <div class="col-sm-1"></div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!--JavaScript Dependencies -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous">
-        </script>
-    <script src="scripts.js"></script>
+        <!--JavaScript Dependencies -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous">
+            </script>
+        <script src="scripts.js"></script>
 
 </body>
 

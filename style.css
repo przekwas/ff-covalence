@@ -11,7 +11,6 @@
 
 .interface {
     background: black;
-    font-size: 2em;
     color: lightgray;
     font-family: monospace;
 }
@@ -21,6 +20,7 @@
     border: 10px solid lightgray;
     border-radius: 0.5em;
     text-align: left;
+    width: 100%;
 }
 
 
@@ -28,18 +28,17 @@
     background-color: blue;
     border: 10px solid lightgray;
     border-radius: 0.5em;
+    width: 100%;
 }
 
 #warrior {
-    float: right;
-    margin: 4em;
-    padding: 4em;
+    /* float: right; */
+    /* margin: 4em;
+    padding: 4em; */
 }
 
 #warrior img {
-    position: relative;
-    height: 190%;
-    width: 190%;
+
 }
 
 #boss {
@@ -49,8 +48,7 @@
 }
 
 #boss img {
-    height: 175%;
-    width: 175%;
+    
 }
 
 #info span { 
@@ -58,6 +56,7 @@
     margin: 0.5em;
     padding: 0.5em;
     text-shadow: 2px 2px 2px black;
+    font-size: 1.75em;
 }
 
 #actions span {
@@ -65,6 +64,7 @@
     text-shadow: 2px 2px 2px black;
     text-align: left;
     display: block;
+    font-size: 1.75em;
 }
 
 #arrow {
