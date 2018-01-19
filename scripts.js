@@ -12,8 +12,15 @@ class Npc {
     }
     //animation for a regular attack
     attack() {
-        $("#warrior").animate({ "left": "70%" }, function () { $(this).animate({ "left": "75%" }) });
+        $("#warrior")
+            .html("<img src='images/Warrior-Attack.gif'>")
+            .animate({ "left": "70%" }, 500, function () {
+            $(this)
+            .html("<img src='images/Warrior.gif'>")
+            .animate({ "left": "75%" }, 500);
+            });
     }
+
     //change sprite to victory dance gif
     victory() {
         $("#warrior img").attr("src", "images/Warrior-Victory.gif");
@@ -89,7 +96,7 @@ $(document).keypress(function () {
             }
             //catch for "Magic" being selected
         } else if (actionIndex === 1) {
-            
+
             playerOne.magicCast();
             //catch for "Code" being selected
         } else if (actionIndex === 2) {
