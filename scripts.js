@@ -4,36 +4,48 @@ let actionScreenDiv = $("#actions");
 
 //class for npc's
 class Npc {
-    constructor(name, totalHealth, currentHealth, attackPower, img) {
+    constructor(name, totalHealth, currentHealth, attackPower) {
         this.name = name;
         this.totalHealth = totalHealth;
         this.currentHealth = currentHealth;
         this.attackPower = attackPower;
     }
-    //animation for a regular attack
+}
+
+//player class based on npc
+class Player extends Npc {
+    constructor(name, totalHealth, currentHealth, attackPower) {
+        super(name, totalHealth, currentHealth, attackPower);
+    }
+    //attack animation for players
     attack() {
         $("#warrior")
             .html("<img src='images/Warrior-Attack.gif'>")
             .animate({ "left": "70%" }, 500, function () {
-            $(this)
-            .html("<img src='images/Warrior.gif'>")
-            .animate({ "left": "75%" }, 500);
+                $(this)
+                    .html("<img src='images/Warrior.gif'>")
+                    .animate({ "left": "75%" }, 500);
             });
-        $("#ragnarok").delay(500).fadeIn(0).delay(100).fadeOut(0);
+        $("#ragnarok").delay(500).fadeIn(0).delay(150).fadeOut(0);
     }
-
-    //change sprite to victory dance gif
+    //victory animation for playerds
     victory() {
         $("#warrior img").attr("src", "images/Warrior-Victory.gif");
     }
-    magicCast() {
-        //$('#warrior img').attr("src", "images/Warrior-Magic.jpg");NOT YET WORKING 
+
+
+}
+
+//boss class based on npc
+class Boss extends Npc {
+    constructor(name, totalHealth, currentHealth, attackPower) {
+        super(name, totalHealth, currentHealth, attackPower);
     }
 }
 
 //test objects for players and npcs
-let playerOne = new Npc("Luke", 3000, 1987, 200);
-let boss = new Npc("Covalence", 9999, 999, 100);
+let playerOne = new Player("Luke", 3000, 1987, 200);
+let boss = new Boss("Covalence", 9999, 999, 100);
 
 
 //test playerOne info on the div
@@ -95,9 +107,16 @@ $(document).keypress(function () {
                 playerOne.attack();
                 //death fade, victory dance!
             } else if (boss.currentHealth - playerOne.attackPower <= 0) {
+                playerOne.attack();
                 $("#boss-stats").text(boss.name + ": SLAUGHTERED!");
                 $("#boss").fadeOut("slow");
-                playerOne.victory();
+                $("#warrior").delay(500).queue(function() {
+
+                    playerOne.victory();
+               
+                    $(this).dequeue();
+               
+                 });
             }
             //catch for "Magic" being selected
         } else if (actionIndex === 1) {
