@@ -1,12 +1,17 @@
 #warrior {
+    position: absolute;
     margin: 1em;
     padding: 1em;
+    left: 75%;
+    top: 20%;
 }
 
 #boss {
+    position: absolute;
     margin: 1em;
     padding: 1em;
-    left: 1em;
+    left: 12%;
+    top: 5%;
 }
 
 #info div { 
