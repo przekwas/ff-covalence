@@ -39,3 +39,27 @@
     width: 1.25em;
     margin-left: 0.75em;
 }
+
+#magics {
+    position: absolute;
+    left: 18%;
+    top: 35%;
+    color: #eff1ff;
+    text-shadow: 2px 2px #212421,
+                 1px 1px #212021;
+    font-family: Verdana, sans-serif;
+    font-size: 1.5em;
+    font-weight: normal;
+    margin: 5px 0;
+}
+
+#healing {
+    position: absolute;
+    left: 68%;
+    top: 24%;
+}
+
+#healing img {
+    height: 70%;
+    width: 70%;
+}

@@ -1,6 +1,11 @@
 //making calling these divs easier
 let infoScreenDiv = $("#info");
+
 let actionScreenDiv = $("#actions");
+
+let magicScreenDiv = $("#magics");
+
+let enterPressed = 0;
 
 //class for npc's
 class Npc {
@@ -28,6 +33,22 @@ class Player extends Npc {
             });
         $("#ragnarok").delay(500).fadeIn(0).delay(150).fadeOut(0);
     }
+
+    magic() {
+        $("#warrior img")
+            .delay(100)
+            .queue(function (next) {
+                $(this).attr("src", "images/Warrior-Channel-Cast.gif");
+                next();
+            })
+            .delay(1000)
+            .queue(function (next) {
+                $(this).attr("src", "images/Warrior.gif");
+                next();
+            });
+        $("#healing").fadeIn("slow").fadeOut("slow");
+    }
+
     //victory animation for playerds
     victory() {
         $("#warrior img").attr("src", "images/Warrior-Victory.gif");
@@ -86,6 +107,8 @@ let actionIndex = 0;
 
 $(document).ready(function () {
     $("#ragnarok").hide();
+    $("#magics").hide();
+    $("#healing").hide();
 });
 
 $(document).keydown(function (event) {
@@ -137,7 +160,20 @@ $(document).keypress(function () {
             //catch for "Magic" being selected
         } else if (actionIndex === 1) {
 
-            playerOne.magicCast();
+            if (event.which === 13) {
+                if (enterPressed === 0) {
+                    enterPressed++;
+                    magicScreenDiv.show();
+                    arrowPointer.appendTo(magicScreenDiv);
+                } else if (enterPressed === 1) {
+                    enterPressed++;
+                    magicScreenDiv.hide();
+                    arrowPointer.appendTo("#1");
+                    enterPressed = 0;
+                    playerOne.magic();
+                }
+            }
+
             //catch for "Code" being selected
         } else if (actionIndex === 2) {
 
