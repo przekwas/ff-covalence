@@ -35,7 +35,8 @@ positionOne.appendTo(infoScreenDiv);
 let positionTwo = $("<div id='boss-stats'>" + boss.name + ": " + boss.currentHealth + " / " + boss.totalHealth + "</div><br>");
 positionTwo.appendTo(infoScreenDiv);
 
-let arrowPointer = $("<img src='images/si-glyph-arrow-thick-left.svg' id='arrow'>");
+// let arrowPointer = $("<img src='images/si-glyph-arrow-thick-left.svg' id='arrow'>");
+let arrowPointer = $("<img src='images/cursor.png' id='arrow'>");
 
 
 //loops all the action items on the div
