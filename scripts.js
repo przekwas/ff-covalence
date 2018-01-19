@@ -12,7 +12,7 @@ class Npc {
     }
     //animation for a regular attack
     attack() {
-        $("#warrior img").animate({ "right": "50px" }, function () { $(this).animate({ "right": "0px" }) });
+        $("#warrior").animate({ "left": "70%" }, function () { $(this).animate({ "left": "75%" }) });
     }
     //change sprite to victory dance gif
     victory() {
