@@ -19,6 +19,7 @@ class Npc {
             .html("<img src='images/Warrior.gif'>")
             .animate({ "left": "75%" }, 500);
             });
+        $("#ragnarok").delay(500).fadeIn(0).delay(100).fadeOut(0);
     }
 
     //change sprite to victory dance gif
@@ -56,6 +57,10 @@ for (i = 0; i < actionListItems.length; i++) {
 //appends arrow pointer to default position "fight" on screen
 arrowPointer.appendTo("#0");
 let actionIndex = 0;
+
+$(document).ready(function () {
+    $("#ragnarok").hide();
+});
 
 $(document).keydown(function (event) {
 

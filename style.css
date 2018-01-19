@@ -14,6 +14,12 @@
     top: 5%;
 }
 
+#ragnarok {
+    position: absolute;
+    left: 69%;
+    top: 25%;
+}
+
 #info div { 
     text-align: left;
     text-shadow: 2px 2px 2px black;
