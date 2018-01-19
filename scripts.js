@@ -29,10 +29,10 @@ let boss = new Npc("Covalence", 9999, 999, 100);
 
 
 //test playerOne info on the div
-let positionOne = $("<span>" + playerOne.name + ": " + playerOne.currentHealth + " / " + playerOne.totalHealth + "</span><br>");
+let positionOne = $("<div>" + playerOne.name + ": " + playerOne.currentHealth + " / " + playerOne.totalHealth + "</div><br>");
 positionOne.appendTo(infoScreenDiv);
 
-let positionTwo = $("<span id='boss-stats'>" + boss.name + ": " + boss.currentHealth + " / " + boss.totalHealth + "</span><br>");
+let positionTwo = $("<div id='boss-stats'>" + boss.name + ": " + boss.currentHealth + " / " + boss.totalHealth + "</div><br>");
 positionTwo.appendTo(infoScreenDiv);
 
 let arrowPointer = $("<img src='images/si-glyph-arrow-thick-left.svg' id='arrow'>");
@@ -41,7 +41,7 @@ let arrowPointer = $("<img src='images/si-glyph-arrow-thick-left.svg' id='arrow'
 //loops all the action items on the div
 let actionListItems = ["Fight", "Magic", "Code", "Items"];
 for (i = 0; i < actionListItems.length; i++) {
-    let actionItem = $("<span id=" + i + ">" + actionListItems[i] + "</span>")
+    let actionItem = $("<div id=" + i + ">" + actionListItems[i] + "</div>")
     actionItem.appendTo(actionScreenDiv);
 }
 

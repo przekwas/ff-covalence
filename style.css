@@ -1,69 +1,24 @@
-#top-background {
-    background-image: url("images/forest_bg.gif");
-    background-repeat: round;
-    height: 5vw;
-}
-
-#battleground {
-    background-color: black;
-    height: 22vw;
-}
-
-.interface {
-    background: black;
-    color: lightgray;
-    font-family: monospace;
-}
-
-.interface #actions {
-    background-color: blue;
-    border: 10px solid lightgray;
-    border-radius: 0.5em;
-    text-align: left;
-    width: 100%;
-}
-
-
-.interface #info {
-    background-color: blue;
-    border: 10px solid lightgray;
-    border-radius: 0.5em;
-    width: 100%;
-}
-
 #warrior {
-    /* float: right; */
-    /* margin: 4em;
-    padding: 4em; */
-}
-
-#warrior img {
-
+    margin: 1em;
+    padding: 1em;
 }
 
 #boss {
-    float: left;
-    margin: 2em;
-    padding: 2em;
+    margin: 1em;
+    padding: 1em;
+    left: 1em;
 }
 
-#boss img {
-    
-}
-
-#info span { 
-    text-align: center;
-    margin: 0.5em;
-    padding: 0.5em;
+#info div { 
+    text-align: left;
     text-shadow: 2px 2px 2px black;
     font-size: 1.75em;
 }
 
-#actions span {
+#actions div {
     text-align: center;
     text-shadow: 2px 2px 2px black;
-    text-align: left;
-    display: block;
+    text-align: left; 
     font-size: 1.75em;
 }
 
