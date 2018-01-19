@@ -11,10 +11,10 @@
 
 #interface {
     background-color: black;
-    height: 12em;
+    height: 13em;
 }
 
-#actions, #info {
+.ffui {
     border: solid 2px #424542;
     box-shadow: 1px 1px #e7dfe7,
                 -1px -1px #e7dfe7,
@@ -36,7 +36,7 @@
     border-radius: 0.5em;
   }
 
- #actions, #info * {
+.ffui * {
     color: #eff1ff;
     text-shadow: 2px 2px #212421,
                  1px 1px #212021;

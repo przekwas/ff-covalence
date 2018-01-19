@@ -41,11 +41,25 @@ class Boss extends Npc {
     constructor(name, totalHealth, currentHealth, attackPower) {
         super(name, totalHealth, currentHealth, attackPower);
     }
+
+    damage() {
+        $("#boss")
+            .delay(600)
+            .queue(function (next) {
+                $(this).css({ "filter": "invert()" });
+                next();
+            })
+            .delay(100)
+            .queue(function (next) {
+                $(this).css({ "filter": "none" });
+                next();
+            });
+    }
 }
 
 //test objects for players and npcs
 let playerOne = new Player("Luke", 3000, 1987, 200);
-let boss = new Boss("Covalence", 9999, 999, 100);
+let boss = new Boss("Covalence", 9999, 399, 100);
 
 
 //test playerOne info on the div
@@ -105,18 +119,20 @@ $(document).keypress(function () {
                 boss.currentHealth = boss.currentHealth - playerOne.attackPower;
                 $("#boss-stats").text(boss.name + ": " + boss.currentHealth + " / " + boss.totalHealth);
                 playerOne.attack();
+                boss.damage();
                 //death fade, victory dance!
             } else if (boss.currentHealth - playerOne.attackPower <= 0) {
                 playerOne.attack();
+                boss.damage();
                 $("#boss-stats").text(boss.name + ": SLAUGHTERED!");
-                $("#boss").fadeOut("slow");
-                $("#warrior").delay(500).queue(function() {
+                $("#boss").delay(100).fadeOut(2000);
+                $("#warrior").delay(500).queue(function () {
 
                     playerOne.victory();
-               
+
                     $(this).dequeue();
-               
-                 });
+
+                });
             }
             //catch for "Magic" being selected
         } else if (actionIndex === 1) {
