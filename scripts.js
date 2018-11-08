@@ -33,7 +33,7 @@ class Player extends Npc {
             });
         $("#ragnarok").delay(500).fadeIn(0).delay(150).fadeOut(0);
     }
-
+    //animates the warrior to cast, shows the healing gif, resets to normal
     magic() {
         $("#warrior img")
             .delay(100)
@@ -63,6 +63,7 @@ class Boss extends Npc {
         super(name, totalHealth, currentHealth, attackPower);
     }
 
+    //animates the boss img to inverted and back
     damage() {
         $("#boss")
             .delay(600)
@@ -84,7 +85,7 @@ let boss = new Boss("Covalence", 9999, 399, 100);
 
 
 //test playerOne info on the div
-let positionOne = $("<div>" + playerOne.name + ": " + playerOne.currentHealth + " / " + playerOne.totalHealth + "</div><br>");
+let positionOne = $("<div id='player'>" + playerOne.name + ": " + playerOne.currentHealth + " / " + playerOne.totalHealth + "</div><br>");
 positionOne.appendTo(infoScreenDiv);
 
 let positionTwo = $("<div id='boss-stats'>" + boss.name + ": " + boss.currentHealth + " / " + boss.totalHealth + "</div><br>");
@@ -160,17 +161,23 @@ $(document).keypress(function () {
             //catch for "Magic" being selected
         } else if (actionIndex === 1) {
 
+            //if enter is hit on "Magic"
             if (event.which === 13) {
+                //first time it will bring up the magic cast menu w/ the pointer
                 if (enterPressed === 0) {
                     enterPressed++;
                     magicScreenDiv.show();
                     arrowPointer.appendTo(magicScreenDiv);
                 } else if (enterPressed === 1) {
+                    //second enter keypress will reset back to main menu, do the math for magic, and run the animation
                     enterPressed++;
                     magicScreenDiv.hide();
                     arrowPointer.appendTo("#1");
                     enterPressed = 0;
                     playerOne.magic();
+                    playerOne.currentHealth += 200;
+                    $("#player").text(playerOne.name + ": " + playerOne.currentHealth + " / " + playerOne.totalHealth);
+
                 }
             }
 
